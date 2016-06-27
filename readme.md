@@ -14,4 +14,5 @@
 ### STRETCH:
 
 - Hook up a database that you insert these values into after you've validated them.
+
 > REMINDER: Don't store passwords in plain text.. Make sure you hash it first!
