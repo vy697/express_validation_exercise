@@ -1,11 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="/style.css" media="screen" title="no title" charset="utf-8">
-  </head>
-  <body>
+<% include partials/header %>
 
-  </body>
-</html>
+<div class="row">
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-8">
+    <form class="" action="/addpost" method="post">
+      <label for="title">Title
+        <input type="text" name="title" value="<%= title %>" placeholder="title">
+      </label>
+      <label for="author">Author
+        <input type="text" name="author" value="<%= author %>" placeholder="author">
+      </label>
+      <label for="email">Email
+        <input type="text" name="email" value="<%= email %>" placeholder="email">
+      </label>
+      <label for="description">Description
+        <input type="text" name="description" value="<%= description %>" placeholder="description">
+      </label>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+
+    <% if(hasError) { %>
+      <div class="row">
+        <div class="col-md-6 errorBlock">
+          <% for(var item in error) { %>
+            <strong><h6><%= item %></h6></strong>
+            <ul>
+            <% for(var i = 0; i < error[item].length; i++) { %>
+                <li>
+                  <i>
+                    <%= error[item][i].message %>
+                  </i>
+                </li>
+            <% } %>
+            </ul>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+
+  </div>
+  <div class="col-md-2">
+
+  </div>
+</div>
+
+
+
+<% include partials/footer %>

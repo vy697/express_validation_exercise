@@ -1,3 +1,28 @@
 body{
   background-color: rgb(190, 214, 215);
+  text-align: left;
+  padding: 2rem;
+}
+input{
+  margin: 1rem;
+}
+label{
+  display: block;
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+i{
+  font-size: 1rem;
+}
+h6{
+  margin: .1rem;
+}
+.errorBlock{
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(221, 140, 155);
+  color: rgb(119, 15, 15);
+  border: .2rem solid rgb(119, 15, 15);
 }
