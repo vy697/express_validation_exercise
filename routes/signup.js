@@ -13,6 +13,9 @@ var router = express.Router();
 // First Name: Required.
 // Last Name: Required.
 // Phone Number: Required. Must be a 10 digit number formatted like: 999-888-9898
+//
+// STRETCH: Hook up a database that you insert these values into after you've validated them.
+// REMINDER: Don't store passwords in plain text.. Make sure you hash it first!
 
 router.get('/', function(req, res){
   // Handle initial rendering here.
