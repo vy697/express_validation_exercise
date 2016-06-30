@@ -3,6 +3,39 @@
 
 
     <form class="" action="/signup" method="post">
+      <label for="username">Username</label>
+        <input type="text" name="username" value="<%= username %>">
+      <label for="password">Password</label>
+        <input type="password" name="password" value="">
+      <label for="email">Email</label>
+        <input type="text" name="email" value="">
+      <label for="firstName">First Name</label>
+        <input type="text" name="firstName" value="">
+      <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" value="">
+      <label for="phone">Phone Number</label>
+        <input type="text" name="phone" value=""></br>
+
+      <button class="btn btn-primary" type="submit">Submit</button>
+
+      <% if(hasError) { %>
+        <div class="row">
+          <div class="col-md-6 errorBlock">
+            <% for(var item in error) {%>
+              <strong><h6><%= item %></h6></strong>
+              <ul>
+              <% for(var i = 0; i < error[item].length; i++) { %>
+                <li>
+                  <i>
+                    <%= error[item][i].message %>
+                  </i>
+                </li>
+              <% } %>
+              </ul>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
       <%# Add form validations for:
       Username: Required. Must be more than 6 characters, must start with a letter, and no punctuation.
       Password: Required. Must be more than 8 characters with atleast One letter, one number, and one special character (!?/.,')
@@ -12,6 +45,8 @@
       Phone Number: Required. Must be a 10 digit number formatted like: 999-888-9898%>
 
     </form>
+
+
 
 
 <% include partials/footer %>
